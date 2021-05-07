@@ -1,24 +1,21 @@
 import React from "react";
 
-// type Pokemon = {
-//   name: string;
-//   weight: number;
-//   awesome: boolean;
-//   terrifying: boolean;
-//   whataboutnull: null;
-//   andundefined: undefined;
-// };
+type Props = {
+  name: string;
+  weight: number;
+  awesome: boolean;
+  terrifying: boolean;
+  abilities: string[];
+};
 
-export default function Pokemon(/*pokemon: Pokemon */) {
+export default function Pokemon(props: Props) {
   return (
     <div>
-      <h2>Pokemon name: {"Charizard"}</h2>
-      <p>Weight: {90} kg</p>
-      <p>Awesome: {true}</p>
-      <p>Terrifying: {false}</p>
-      <p>What about null? {null}</p>
-      <p>And undefined? {undefined}</p>
-      <p>Abilities: {["Blaze", "Solar power", "Tough claws", "Drought"]}</p>
+      <h2>Pokemon name: {props.name}</h2>
+      <p>Weight: {props.weight} kg</p>
+      <p>Awesome: {props.awesome ? "Yes!" : "nope"}</p>
+      <p>Terrifying: {props.terrifying ? "Yes!" : "nope"}</p>
+      <p>Abilities: {props.abilities}</p>
     </div>
   );
 }
